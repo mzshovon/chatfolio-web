@@ -19,8 +19,12 @@ export function proxy(request: NextRequest) {
     form-action 'self';
     frame-src https://www.youtube-nocookie.com;
     frame-ancestors 'none';
-    upgrade-insecure-requests;
   `
+    // No upgrade-insecure-requests: it forces every same-origin asset
+    // request onto https:// even when the site itself is served over
+    // plain http (e.g. a bare IP:port with no TLS termination in front),
+    // which breaks every CSS/JS/font load with ERR_SSL_PROTOCOL_ERROR.
+    // Only add it back once this app is actually served over HTTPS.
     .replace(/\s{2,}/g, " ")
     .trim();
 
