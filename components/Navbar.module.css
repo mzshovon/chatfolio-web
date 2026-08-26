@@ -32,13 +32,13 @@
 }
 
 .logo {
-  height: 42px;
+  height: 52px;
   width: auto;
 }
 
 @media (max-width: 480px) {
   .logo {
-    height: 36px;
+    height: 40px;
   }
 }
 
