@@ -57,7 +57,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/Logo.svg",
+    icon: "/chatfolio-icon.png",
+    apple: "/chatfolio-icon.png",
   },
 };
 
