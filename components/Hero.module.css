@@ -6,7 +6,10 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* min(320px, 100%) keeps the track from forcing a wider column than the
+     viewport actually has room for, which overflows the page horizontally
+     on narrow phones (e.g. 320px-wide screens minus container padding). */
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 40px;
   align-items: center;
 }

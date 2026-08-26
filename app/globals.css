@@ -56,8 +56,8 @@ svg {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding-left: clamp(20px, 5vw, 64px);
-  padding-right: clamp(20px, 5vw, 64px);
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
 }
 
 .chip {
