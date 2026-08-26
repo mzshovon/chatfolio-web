@@ -1,0 +1,154 @@
+.wrapper {
+  position: fixed;
+  right: clamp(16px, 4vw, 28px);
+  bottom: clamp(16px, 4vw, 28px);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-brand);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(200, 134, 46, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab:hover {
+  transform: scale(1.06);
+  box-shadow: 0 14px 34px rgba(200, 134, 46, 0.55);
+}
+
+.fab:active {
+  transform: scale(0.97);
+}
+
+.panel {
+  width: min(320px, calc(100vw - 32px));
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--color-border);
+  padding: 18px;
+  animation: pop 0.18s ease;
+  transform-origin: bottom right;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 2px;
+}
+
+.prompt {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.starBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  color: var(--color-border);
+}
+
+.star {
+  color: var(--color-border);
+}
+
+.starActive {
+  color: var(--color-brand-accent);
+}
+
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-warm);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  outline: none;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.textarea:focus {
+  border-color: var(--color-brand);
+}
+
+.form :global(.btn) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.form :global(.btn:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.errorText {
+  font-size: 12px;
+  color: #b3261e;
+  margin: -4px 0 10px;
+}
+
+.thanks {
+  font-size: 13px;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    right: 12px;
+    bottom: 12px;
+  }
+}

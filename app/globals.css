@@ -1,0 +1,145 @@
+:root {
+  --color-bg: #ffffff;
+  --color-bg-warm: #f3efe6;
+  --color-bg-dark: #14171a;
+  --color-bg-dark-2: #1d2126;
+  --color-border: #e6e1d3;
+  --color-border-dark: #2a2f35;
+  --color-text: #1e2222;
+  --color-text-muted: #6b7280;
+  --color-text-dark-muted: #9aa3ac;
+  --color-brand: #c8862e;
+  --color-brand-chip-bg: #f5e6cc;
+  --color-brand-accent: #e3a83f;
+  --color-brand-accent-bg: #3a2e1a;
+  --font-sans: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: var(--font-lora), Georgia, serif;
+  --radius-sm: 9px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --nav-height: 68px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 64px);
+  padding-right: clamp(20px, 5vw, 64px);
+}
+
+.chip {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--color-brand-chip-bg);
+  color: var(--color-brand);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.chip-dark {
+  background: var(--color-brand-accent-bg);
+  color: var(--color-brand-accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: none;
+  color: var(--color-text);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.btn-accent {
+  background: var(--color-brand-accent);
+  color: var(--color-bg-dark);
+  font-weight: 700;
+}
+
+.btn-outline {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,29 @@
+.bar {
+  background: var(--color-bg-dark);
+  color: #f1efea;
+  padding: 26px 0;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  color: var(--color-brand-accent);
+}
+
+.label {
+  font-size: 12px;
+  color: var(--color-text-dark-muted);
+  margin-top: 4px;
+}

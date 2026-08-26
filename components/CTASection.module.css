@@ -1,0 +1,19 @@
+.cta {
+  background: var(--color-bg-warm);
+  padding: 36px 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copy {
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 600;
+  font-family: var(--font-serif);
+  max-width: 440px;
+}

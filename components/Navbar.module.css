@@ -1,0 +1,153 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.navScrolled {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 6px 24px rgba(20, 23, 26, 0.06);
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  min-height: var(--nav-height);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 42px;
+  width: auto;
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 36px;
+  }
+}
+
+.links {
+  display: flex;
+  gap: clamp(14px, 3vw, 32px);
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+}
+
+.links a {
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.links a:hover {
+  color: var(--color-text);
+}
+
+.links a:hover::after {
+  transform: scaleX(1);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.signIn {
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 6px;
+}
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 6px;
+}
+
+.mobilePanel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  opacity: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobilePanelOpen {
+  max-height: 320px;
+  opacity: 1;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px clamp(20px, 5vw, 64px) 20px;
+  font-size: 14.5px;
+}
+
+.mobileLinks a {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.mobileLinks .signIn {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobileLinks .btn {
+  margin-top: 12px;
+  justify-content: center;
+}
+
+@media (min-width: 861px) {
+  .mobilePanel {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .links,
+  .actions {
+    display: none;
+  }
+  .menuToggle {
+    display: inline-flex;
+  }
+}

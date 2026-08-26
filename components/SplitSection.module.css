@@ -1,0 +1,66 @@
+.section {
+  padding: 56px 0;
+  scroll-margin-top: var(--nav-height);
+}
+
+.dark {
+  background: var(--color-bg-dark);
+  color: #f1efea;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 600;
+  font-family: var(--font-serif);
+  line-height: 1.25;
+  margin: 16px 0 0;
+}
+
+.desc {
+  font-size: 14.5px;
+  color: var(--color-text-muted);
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.descDark {
+  color: var(--color-text-dark-muted);
+}
+
+.pointList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-bg-warm);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 13.5px;
+}
+
+.pointDark {
+  background: var(--color-bg-dark-2);
+  border: 1px solid var(--color-border-dark);
+}
+
+.pointIcon {
+  color: var(--color-brand);
+  flex-shrink: 0;
+}
+
+.pointIconAccent {
+  color: var(--color-brand-accent);
+  flex-shrink: 0;
+}
