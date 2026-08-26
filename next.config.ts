@@ -15,11 +15,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   agentRules: false,
   experimental: {
-    // Default worker count is CPU count - 1, which OOMs the build on
-    // memory-constrained hosts (each worker is a separate process).
-    // Scale workers by available memory instead, capped low as a floor.
-    // Keep this at 1 for small VPS builds (2GB or less) — see
-    // scripts/docker-build-safe.sh for the accompanying hard memory cap.
+    // Default worker count is CPU count - 1, which is wasteful on small
+    // build hosts (each worker is a separate process). Scale by available
+    // memory instead, capped at 1 as a floor for 1-2GB VPS builds.
     memoryBasedWorkersCount: true,
     cpus: 1,
   },

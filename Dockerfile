@@ -13,14 +13,11 @@ FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-# Cap V8's heap on memory-constrained build hosts so an actual shortage
-# surfaces as a clear "heap out of memory" error instead of a silent
-# OOM-kill (SIGKILL). Turbopack's own native process sits outside this
-# heap, so leave real headroom below the host's actual memory limit —
-# e.g. on a 2GB host, 1024-1280 is safer than 1536. Override as needed:
-#   docker build --build-arg NODE_OPTIONS="--max-old-space-size=1024" .
-ARG NODE_OPTIONS="--max-old-space-size=1024"
-ENV NODE_OPTIONS=$NODE_OPTIONS
+# --webpack (set in package.json's build script): Next.js 16 defaults `next
+# build` to Turbopack, whose production build path is far more memory-hungry
+# than webpack's for this app — it OOM-killed on a 2GB host where webpack
+# builds cleanly with room to spare. Keep this until Turbopack's build
+# memory profile is more predictable.
 RUN npm run build
 
 # --- Runtime ------------------------------------------------------------------
