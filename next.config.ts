@@ -14,6 +14,13 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   agentRules: false,
+  experimental: {
+    // Default worker count is CPU count - 1, which OOMs the build on
+    // memory-constrained hosts (each worker is a separate process).
+    // Scale workers by available memory instead, capped low as a floor.
+    memoryBasedWorkersCount: true,
+    cpus: 2,
+  },
   async headers() {
     return [
       {
