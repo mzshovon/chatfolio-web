@@ -5,6 +5,7 @@ Templates/
 
 # next.js
 /.next/
+.claude/
 /out/
 
 # production
