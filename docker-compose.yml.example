@@ -1,0 +1,14 @@
+# Compose only auto-loads a file named exactly ".env" for ${PORT}
+# substitution below. This repo's convention is .env.local (matching
+# Next.js), so point Compose at it explicitly:
+#   docker compose --env-file .env.local up --build
+services:
+  chatfolio-landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    environment:
+      - PORT=${PORT:-3000}
+    restart: unless-stopped
