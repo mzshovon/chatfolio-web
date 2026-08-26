@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Lora } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -68,9 +69,15 @@ export const viewport: Viewport = {
   themeColor: "#c8862e",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Reading a request header opts this layout out of static rendering,
+  // which is required for CSP nonces: proxy.ts stamps a fresh nonce on
+  // every request, so the page must render per-request too or the nonce
+  // in the response header will never match a statically cached HTML body.
+  await headers();
+
   return (
     <html lang="en" className={`${ibmPlexSans.variable} ${lora.variable}`}>
       <body>{children}</body>
