@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import styles from "./SplitSection.module.css";
+import { RECRUITER_CHAT_URL } from "@/lib/urls";
 
 const POINTS = [
   "Ask what you'd ask in a screening call — get grounded answers",
@@ -27,7 +28,7 @@ export default function ForRecruiters() {
             answers about their work — no cold outreach, no waiting for a reply, no
             guessing whether the CV tells the whole story.
           </p>
-          <a href="#pricing" className="btn btn-accent" style={{ marginTop: 22 }}>
+          <a href={RECRUITER_CHAT_URL} className="btn btn-accent" style={{ marginTop: 22 }}>
             Try a live chatfolio
           </a>
         </div>

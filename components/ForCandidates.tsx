@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import styles from "./SplitSection.module.css";
+import { SIGN_UP_URL } from "@/lib/urls";
 
 const POINTS = [
   "Auto-parsed CV — experience, projects, skills, education",
@@ -20,7 +21,7 @@ export default function ForCandidates() {
             real experience — salary range, availability, depth of skill — accurately,
             on your terms, at any hour.
           </p>
-          <a href="#pricing" className="btn btn-primary" style={{ marginTop: 22 }}>
+          <a href={SIGN_UP_URL} className="btn btn-primary" style={{ marginTop: 22 }}>
             Build your chatfolio
           </a>
         </div>

@@ -17,7 +17,7 @@ export function proxy(request: NextRequest) {
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-src https://www.youtube-nocookie.com;
+    frame-src https://www.youtube-nocookie.com https://www.supportkori.com https://supportkori.com;
     frame-ancestors 'none';
   `
     // No upgrade-insecure-requests: it forces every same-origin asset

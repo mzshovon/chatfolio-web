@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./Pricing.module.css";
+import { PURCHASE_URL, SIGN_UP_URL } from "@/lib/urls";
 
 type Currency = "BDT" | "USD";
 
@@ -47,7 +48,7 @@ export default function Pricing({ onContactSales }: PricingProps) {
           <div className={styles.planName}>Free</div>
           <div className={styles.planPrice}>{prices.free}</div>
           <div className={styles.planDesc}>1 chatfolio, draft only</div>
-          <a href="#top" className="btn btn-outline" style={{ marginTop: 20, width: "100%" }}>
+          <a href={SIGN_UP_URL} className="btn btn-outline" style={{ marginTop: 20, width: "100%" }}>
             Start free
           </a>
         </div>
@@ -59,7 +60,7 @@ export default function Pricing({ onContactSales }: PricingProps) {
             <span className={styles.planPeriod}>/mo</span>
           </div>
           <div className={styles.planDesc}>Publish, custom slug, full chat history</div>
-          <a href="#top" className="btn btn-primary" style={{ marginTop: 20, width: "100%" }}>
+          <a href={PURCHASE_URL} className="btn btn-primary" style={{ marginTop: 20, width: "100%" }}>
             Get started
           </a>
         </div>

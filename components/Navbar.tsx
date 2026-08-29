@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
+import { SIGN_IN_URL, SIGN_UP_URL } from "@/lib/urls";
 
 const NAV_LINKS = [
   { href: "#product", label: "Product" },
@@ -67,10 +68,10 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <a href="#" className={styles.signIn}>
+          <a href={SIGN_IN_URL} className={styles.signIn}>
             Sign in
           </a>
-          <a href="#pricing" className="btn btn-primary" onClick={(e) => handleNavClick(e, "#pricing")}>
+          <a href={SIGN_UP_URL} className="btn btn-primary">
             Get started
           </a>
         </div>
@@ -97,14 +98,10 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="#" className={styles.signIn}>
+          <a href={SIGN_IN_URL} className={styles.signIn}>
             Sign in
           </a>
-          <a
-            href="#pricing"
-            className="btn btn-primary"
-            onClick={(e) => handleNavClick(e, "#pricing")}
-          >
+          <a href={SIGN_UP_URL} className="btn btn-primary">
             Get started
           </a>
         </nav>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PlayCircle } from "lucide-react";
 import DemoModal from "./DemoModal";
 import styles from "./Hero.module.css";
+import { SIGN_UP_URL } from "@/lib/urls";
 
 const DEMO_VIDEO_ID = "aqz-KE-bpKQ";
 
@@ -23,7 +24,7 @@ export default function Hero() {
             real answers about your work, instantly, any hour.
           </p>
           <div className={styles.ctaRow}>
-            <a href="#pricing" className="btn btn-primary">
+            <a href={SIGN_UP_URL} className="btn btn-primary">
               Build your chatfolio
             </a>
             <button

@@ -13,6 +13,7 @@ import ContactSection from "@/components/ContactSection";
 import ContactModal from "@/components/ContactModal";
 import Footer from "@/components/Footer";
 import FeedbackWidget from "@/components/FeedbackWidget";
+import CrowdfundingWidget from "@/components/CrowdfundingWidget";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -32,7 +33,10 @@ export default function Home() {
       </main>
       <Footer />
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
-      <FeedbackWidget />
+      <div style={{ display: "none" }}>
+        <FeedbackWidget />
+      </div>
+      <CrowdfundingWidget />
     </>
   );
 }
