@@ -22,9 +22,9 @@ export default function Hero() {
           <p className={styles.sub}>
             Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you&apos;re offline.
           </p>
-          <p className={styles.sub}>
+          {/* <p className={styles.sub}>
             Upload your CV. Review your profile. Publish your Chatfolio. Let recruiters start the conversation.
-          </p>
+          </p> */}
           <div className={styles.ctaRow}>
             <a href={SIGN_UP_URL} className="btn btn-primary">
               Create my Chatfolio - Free
