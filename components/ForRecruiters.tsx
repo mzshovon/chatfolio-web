@@ -22,11 +22,9 @@ export default function ForRecruiters() {
         </div>
         <div style={{ order: 1 }}>
           <span className="chip chip-dark">For recruiters</span>
-          <h2 className={styles.title}>Screen faster, with real answers</h2>
+          <h2 className={styles.title}>Don't just read the CV. Talk to it.</h2>
           <p className={`${styles.desc} ${styles.descDark}`}>
-            Chat directly with a candidate&apos;s chatfolio to get real, grounded
-            answers about their work — no cold outreach, no waiting for a reply, no
-            guessing whether the CV tells the whole story.
+            Ask a candidate's Chatfolio about their experience, skills, projects, availability, and background before scheduling the first call.
           </p>
           <a href={RECRUITER_CHAT_URL} className="btn btn-accent" style={{ marginTop: 22 }}>
             Try a live chatfolio

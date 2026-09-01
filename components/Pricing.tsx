@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CheckCircle2 } from "lucide-react";
 import styles from "./Pricing.module.css";
 import { PURCHASE_URL, SIGN_UP_URL } from "@/lib/urls";
 
@@ -10,6 +11,15 @@ const PRICES: Record<Currency, { free: string; pro: string }> = {
   BDT: { free: "৳0", pro: "৳1,320" },
   USD: { free: "$0", pro: "$12" },
 };
+
+const FREEMIUM_FEATURES = [
+  "1 chatfolio domain",
+  "100 chat/day",
+  "1 click AI training",
+  "Max 4 domain slug",
+  "Unlimited chat history",
+  "Small to Mid context text with unlimited token",
+];
 
 type PricingProps = {
   onContactSales: () => void;
@@ -44,15 +54,23 @@ export default function Pricing({ onContactSales }: PricingProps) {
       </div>
 
       <div className={styles.plans}>
-        <div className={styles.plan}>
-          <div className={styles.planName}>Free</div>
+        <div className={`${styles.plan} ${styles.planSingle}`}>
+          <div className={styles.planName}>Freemium</div>
           <div className={styles.planPrice}>{prices.free}</div>
-          <div className={styles.planDesc}>1 chatfolio, draft only</div>
-          <a href={SIGN_UP_URL} className="btn btn-outline" style={{ marginTop: 20, width: "100%" }}>
+          <ul className={styles.planFeatures}>
+            {FREEMIUM_FEATURES.map((feature) => (
+              <li key={feature} className={styles.planFeature}>
+                <CheckCircle2 size={16} className={styles.planFeatureIcon} />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <a href={SIGN_UP_URL} className="btn btn-primary" style={{ marginTop: 20, width: "100%" }}>
             Start free
           </a>
         </div>
 
+        {/* Pro plan — disabled for now, keeping the markup for when it's ready to come back.
         <div className={`${styles.plan} ${styles.planFeatured}`}>
           <div className={styles.planNameFeatured}>Pro</div>
           <div className={styles.planPrice}>
@@ -64,7 +82,9 @@ export default function Pricing({ onContactSales }: PricingProps) {
             Get started
           </a>
         </div>
+        */}
 
+        {/* Teams plan — disabled for now, keeping the markup for when it's ready to come back.
         <div className={styles.plan}>
           <div className={styles.planName}>Teams</div>
           <div className={styles.planPrice}>Custom</div>
@@ -78,6 +98,7 @@ export default function Pricing({ onContactSales }: PricingProps) {
             Contact sales
           </button>
         </div>
+        */}
       </div>
     </section>
   );

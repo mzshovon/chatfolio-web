@@ -4,30 +4,30 @@ import styles from "./Features.module.css";
 const FEATURES = [
   {
     icon: MessageCircleMore,
-    title: "AI chat, grounded",
-    desc: "Answers come only from your approved profile — never invented.",
+    title: "Your AI. Your information. Your rules",
+    desc: "Chatfolio answers using information from your approved professional profile. It doesn't need to invent a career story for you.",
   },
   {
     icon: FileText,
-    title: "CV auto-parse",
-    desc: "Upload once — experience, skills, and education fill in themselves.",
+    title: "Your CV, automatically structured",
+    desc: "Upload your CV once. Chatfolio extracts your experience, education, skills, and projects into your profile.",
   },
   {
     icon: ShieldCheck,
-    title: "You approve every word",
+    title: "You stay in control",
     desc: "Review and edit the AI's intro and summary before it ever goes live.",
   },
   {
     icon: BarChart3,
-    title: "See who's asking",
-    desc: "Read every recruiter conversation from your own dashboard.",
+    title: "See every conversation",
+    desc: "Know what recruiters are asking and understand what they're interested in.",
   },
 ];
 
 export default function Features() {
   return (
     <section id="product" className={`container ${styles.section}`}>
-      <h2 className={styles.title}>Everything you need to be reachable</h2>
+      <h2 className={styles.title}>Your CV gets questions. Chatfolio answers them.</h2>
       <div className={styles.grid}>
         {FEATURES.map((f) => (
           <div key={f.title} className={styles.card}>

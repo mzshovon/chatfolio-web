@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Chatfolio",
   },
   description:
-    "Chatfolio turns your CV into an AI that talks like you — so recruiters get real answers about your work, instantly, any hour.",
+    "Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you're offline.",
   keywords: [
     "chatfolio",
     "AI portfolio",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Chatfolio — Your portfolio, answering recruiters while you sleep",
     description:
-      "Chatfolio turns your CV into an AI that talks like you — so recruiters get real answers about your work, instantly, any hour.",
+      "Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you're offline.",
     siteName: "Chatfolio",
     images: [{ url: "/Logo.svg", width: 1774, height: 887, alt: "Chatfolio" }],
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chatfolio — Your portfolio, answering recruiters while you sleep",
     description:
-      "Chatfolio turns your CV into an AI that talks like you — so recruiters get real answers about your work, instantly, any hour.",
+      "Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you're offline.",
     images: ["/Logo.svg"],
   },
   robots: {

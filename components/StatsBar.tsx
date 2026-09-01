@@ -1,9 +1,9 @@
 import styles from "./StatsBar.module.css";
 
 const STATS = [
-  { value: "18K+", label: "Recruiter conversations" },
-  { value: "2,400", label: "Chatfolios published" },
-  { value: "92%", label: "Recruiter satisfaction" },
+  { value: "24/7", label: "Recruiter availability" },
+  { value: "1 CV", label: "Your starting point" },
+  { value: "100%", label: "You control what goes live" },
 ];
 
 export default function StatsBar() {

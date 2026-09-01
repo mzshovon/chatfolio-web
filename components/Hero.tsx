@@ -20,12 +20,14 @@ export default function Hero() {
             Your portfolio, <em>answering</em> recruiters while you sleep
           </h1>
           <p className={styles.sub}>
-            Chatfolio turns your CV into an AI that talks like you — so recruiters get
-            real answers about your work, instantly, any hour.
+            Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you&apos;re offline.
+          </p>
+          <p className={styles.sub}>
+            Upload your CV. Review your profile. Publish your Chatfolio. Let recruiters start the conversation.
           </p>
           <div className={styles.ctaRow}>
             <a href={SIGN_UP_URL} className="btn btn-primary">
-              Build your chatfolio
+              Create my Chatfolio - Free
             </a>
             <button
               type="button"
@@ -33,7 +35,7 @@ export default function Hero() {
               onClick={() => setDemoOpen(true)}
             >
               <PlayCircle size={18} />
-              See a live example
+              See how it works
             </button>
           </div>
           <p className={styles.microcopy}>Free to start · No credit card required</p>
@@ -45,16 +47,28 @@ export default function Hero() {
             <span>Ada Lovelace&apos;s chatfolio</span>
           </div>
           <div className={styles.messages}>
-            <div className={styles.bubbleUser}>
-              What&apos;s your experience with distributed systems?
+            <div className={`${styles.messageGroup} ${styles.messageGroupUser}`}>
+              <span className={styles.messageLabel}>Recruiter</span>
+              <div className={styles.bubbleUser}>
+                What&apos;s your experience with distributed systems?
+              </div>
             </div>
-            <div className={styles.bubbleBot}>
-              I led the platform team at Acme, building a payments ledger handling
-              millions of transactions a day across distributed services.
+            <div className={`${styles.messageGroup} ${styles.messageGroupBot}`}>
+              <span className={styles.messageLabel}>Chatfolio</span>
+              <div className={styles.bubbleBot}>
+                I led the platform team at Acme, building a payments ledger handling
+                millions of transactions a day across distributed services.
+              </div>
             </div>
-            <div className={styles.bubbleUser}>Open to remote roles?</div>
-            <div className={styles.bubbleBot}>
-              Yes — remote or hybrid, based in Dhaka or fully remote internationally.
+            <div className={`${styles.messageGroup} ${styles.messageGroupUser}`}>
+              <span className={styles.messageLabel}>Recruiter</span>
+              <div className={styles.bubbleUser}>Open to remote roles?</div>
+            </div>
+            <div className={`${styles.messageGroup} ${styles.messageGroupBot}`}>
+              <span className={styles.messageLabel}>Chatfolio</span>
+              <div className={styles.bubbleBot}>
+                Yes — remote or hybrid, based in Dhaka or fully remote internationally.
+              </div>
             </div>
           </div>
         </div>

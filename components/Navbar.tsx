@@ -8,8 +8,8 @@ import { SIGN_IN_URL, SIGN_UP_URL } from "@/lib/urls";
 
 const NAV_LINKS = [
   { href: "#product", label: "Product" },
-  { href: "#candidates", label: "For candidates" },
-  { href: "#recruiters", label: "For recruiters" },
+  { href: "#candidates", label: "For Candidates" },
+  { href: "#recruiters", label: "For Recruiters" },
   { href: "#pricing", label: "Pricing" },
 ];
 
@@ -72,7 +72,7 @@ export default function Navbar() {
             Sign in
           </a>
           <a href={SIGN_UP_URL} className="btn btn-primary">
-            Get started
+            Create my Chatfolio
           </a>
         </div>
 
@@ -102,7 +102,7 @@ export default function Navbar() {
             Sign in
           </a>
           <a href={SIGN_UP_URL} className="btn btn-primary">
-            Get started
+            Create my Chatfolio
           </a>
         </nav>
       </div>

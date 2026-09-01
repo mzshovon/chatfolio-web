@@ -89,24 +89,46 @@
   padding-top: 16px;
 }
 
+.messageGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 80%;
+}
+
+.messageGroupUser {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.messageGroupBot {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.messageLabel {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0 4px;
+}
+
 .bubbleUser,
 .bubbleBot {
   padding: 10px 14px;
   border-radius: 14px;
   font-size: 13px;
-  max-width: 80%;
   line-height: 1.5;
 }
 
 .bubbleUser {
-  align-self: flex-end;
   background: var(--color-brand-chip-bg);
   color: var(--color-text);
-  max-width: 75%;
 }
 
 .bubbleBot {
-  align-self: flex-start;
   background: var(--color-bg-warm);
   color: var(--color-text);
 }
