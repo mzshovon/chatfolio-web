@@ -16,7 +16,7 @@ export default function ForCandidates() {
           <span className="chip">For candidates</span>
           <h2 className={styles.title}>Stop repeating your story on every screening call</h2>
           <p className={styles.desc}>
-            Your CV tells recruiters what you've done. Chatfolio lets them ask why, how, and what you can do next. 
+            Your CV tells recruiters what you&apos;ve done. Chatfolio lets them ask why, how, and what you can do next.
             Upload your CV once. Chatfolio builds your professional profile and lets recruiters ask questions directly. 
             You decide what information is published. Chatfolio handles the repetitive questions.
           </p>
