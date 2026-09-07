@@ -6,7 +6,7 @@ import DemoModal from "./DemoModal";
 import styles from "./Hero.module.css";
 import { SIGN_UP_URL } from "@/lib/urls";
 
-const DEMO_VIDEO_ID = "aqz-KE-bpKQ";
+const DEMO_VIDEO_ID = "mDtyqKWEgCk";
 
 export default function Hero() {
   const [demoOpen, setDemoOpen] = useState(false);

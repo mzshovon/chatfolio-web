@@ -18,7 +18,7 @@ const FREEMIUM_FEATURES = [
   "1 click AI training",
   "Max 4 domain slug",
   "Unlimited chat history",
-  "Small to Mid context text with unlimited token",
+  "Small to Mid context with unlimited token",
 ];
 
 type PricingProps = {
