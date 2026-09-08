@@ -13,7 +13,7 @@ export function proxy(request: NextRequest) {
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: https://i.ytimg.com;
     font-src 'self';
-    connect-src 'self';
+    connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

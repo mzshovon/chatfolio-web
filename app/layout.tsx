@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Lora } from "next/font/google";
 import { headers } from "next/headers";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -80,7 +81,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${ibmPlexSans.variable} ${lora.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }
