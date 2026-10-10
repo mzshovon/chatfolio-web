@@ -8,8 +8,8 @@ export const LEGAL = {
   companyName: "Chatfolio",
   companyAddress: "Dhaka, Bangladesh",
   // REVIEW: replace with real, monitored mailboxes.
-  privacyEmail: process.env.NEXT_PUBLIC_PRIVACY_EMAIL ?? "privacy@chatfolio.example.com",
-  supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "support@chatfolio.example.com",
+  privacyEmail: process.env.NEXT_PUBLIC_PRIVACY_EMAIL ?? "privacy@chatfolio.net",
+  supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "support@chatfolio.net",
   // REVIEW: jurisdiction whose courts/laws govern the Terms.
   governingLaw: "the People's Republic of Bangladesh",
   // Bump these whenever either document materially changes.

@@ -19,7 +19,7 @@ const lora = Lora({
   display: "swap",
 });
 
-const siteUrl = "https://chatfolio.example.com";
+const siteUrl = "https://chatfolio.net";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -45,14 +45,12 @@ export const metadata: Metadata = {
     description:
       "Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you're offline.",
     siteName: "Chatfolio",
-    images: [{ url: "/Logo.svg", width: 1774, height: 887, alt: "Chatfolio" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Chatfolio — Your portfolio, answering recruiters while you sleep",
     description:
       "Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you're offline.",
-    images: ["/Logo.svg"],
   },
   robots: {
     index: true,
