@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, Lora } from "next/font/google";
+import { DM_Sans, Lora } from "next/font/google";
 import { headers } from "next/headers";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
-const ibmPlexSans = IBM_Plex_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-sans",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -78,7 +78,7 @@ export default async function RootLayout({
   await headers();
 
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${lora.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${lora.variable}`}>
       <body>
         {children}
         <GoogleAnalytics />

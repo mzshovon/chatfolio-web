@@ -1,0 +1,95 @@
+.section {
+  background: var(--color-bg-dark);
+  color: #f1efea;
+  padding: 80px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 56px;
+  align-items: center;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  margin: 14px 0 0;
+}
+
+/* Dark-surface variant of the shared segmented control. */
+.toggle {
+  margin-top: 24px;
+}
+
+.toggle :global(.segmented) {
+  background: #23282d;
+}
+
+.toggle :global(.segmented button) {
+  color: #aeb4ba;
+}
+
+.toggle :global(.segmented button[aria-pressed="true"]) {
+  background: var(--color-brand-accent);
+  color: var(--color-bg-dark);
+}
+
+.steps {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.step {
+  display: flex;
+  gap: 18px;
+}
+
+.num {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-brand-accent);
+  width: 40px;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.stepTitle {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.stepBody {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: #aeb4ba;
+  margin-top: 4px;
+}
+
+.video {
+  min-width: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #2c3136;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 0;
+  }
+  .grid {
+    gap: 36px;
+  }
+}

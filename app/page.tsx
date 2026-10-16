@@ -3,10 +3,8 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import StatsBar from "@/components/StatsBar";
-import Features from "@/components/Features";
-import ForCandidates from "@/components/ForCandidates";
-import ForRecruiters from "@/components/ForRecruiters";
+import HowItWorks from "@/components/HowItWorks";
+import Audiences from "@/components/Audiences";
 import Pricing from "@/components/Pricing";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
@@ -14,20 +12,20 @@ import ContactModal from "@/components/ContactModal";
 import Footer from "@/components/Footer";
 import FeedbackWidget from "@/components/FeedbackWidget";
 import CrowdfundingWidget from "@/components/CrowdfundingWidget";
+import type { Audience } from "@/lib/audience";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [audience, setAudience] = useState<Audience>("candidate");
 
   return (
-    <>
+    <div className="home">
       <Navbar />
       <main>
-        <Hero />
-        <StatsBar />
-        <Features />
-        <ForCandidates />
-        <ForRecruiters />
-        <Pricing onContactSales={() => setContactOpen(true)} />
+        <Hero audience={audience} onAudienceChange={setAudience} />
+        <HowItWorks audience={audience} onAudienceChange={setAudience} />
+        <Audiences />
+        <Pricing />
         <CTASection />
         <ContactSection onContact={() => setContactOpen(true)} />
       </main>
@@ -37,6 +35,6 @@ export default function Home() {
         <FeedbackWidget />
       </div>
       <CrowdfundingWidget />
-    </>
+    </div>
   );
 }

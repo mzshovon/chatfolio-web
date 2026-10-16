@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(251, 249, 244, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
@@ -10,7 +10,7 @@
 }
 
 .navScrolled {
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(251, 249, 244, 0.97);
   border-bottom-color: var(--color-border);
   box-shadow: 0 6px 24px rgba(20, 23, 26, 0.06);
 }
@@ -34,6 +34,8 @@
 .logo {
   height: 60px;
   width: auto;
+  /* Logo.svg has a white backdrop; multiply lets the cream nav show through. */
+  mix-blend-mode: multiply;
 }
 
 @media (max-width: 480px) {
@@ -45,8 +47,9 @@
 .links {
   display: flex;
   gap: clamp(14px, 3vw, 32px);
-  font-size: 13.5px;
-  color: var(--color-text-muted);
+  font-size: 15px;
+  font-weight: 500;
+  color: #3e4449;
 }
 
 .links a {
@@ -83,7 +86,7 @@
 }
 
 .signIn {
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 600;
   padding: 10px 6px;
 }
@@ -104,12 +107,12 @@
   overflow: hidden;
   transition: max-height 0.35s ease, opacity 0.3s ease;
   opacity: 0;
-  background: #fff;
+  background: var(--color-bg-page);
   border-bottom: 1px solid var(--color-border);
 }
 
 .mobilePanelOpen {
-  max-height: 320px;
+  max-height: 420px;
   opacity: 1;
 }
 
@@ -118,7 +121,7 @@
   flex-direction: column;
   gap: 4px;
   padding: 12px clamp(20px, 5vw, 64px) 20px;
-  font-size: 14.5px;
+  font-size: 16px;
 }
 
 .mobileLinks a {

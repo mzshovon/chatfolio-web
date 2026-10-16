@@ -1,25 +1,28 @@
 .hero {
-  background: var(--color-bg-warm);
-  padding: 40px 0 70px;
-  scroll-margin-top: var(--nav-height);
+  padding: 64px 0 72px;
 }
 
 .grid {
   display: grid;
-  /* min(320px, 100%) keeps the track from forcing a wider column than the
-     viewport actually has room for, which overflows the page horizontally
-     on narrow phones (e.g. 320px-wide screens minus container padding). */
-  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-  gap: 40px;
+  /* min(460px, 100%) stops the track from forcing a wider column than the
+     viewport has room for, which would overflow narrow phones. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: 56px;
   align-items: center;
 }
 
+.copy {
+  min-width: 0;
+}
+
 .headline {
-  font-size: clamp(30px, 4.5vw, 46px);
-  line-height: 1.15;
-  font-weight: 600;
   font-family: var(--font-serif);
-  margin: 20px 0 0;
+  font-weight: 600;
+  font-size: clamp(36px, 5.4vw, 62px);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  margin: 26px 0 0;
+  text-wrap: balance;
 }
 
 .headline em {
@@ -28,107 +31,43 @@
 }
 
 .sub {
-  font-size: 16px;
-  color: var(--color-text-muted);
-  margin-top: 20px;
-  line-height: 1.6;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--color-text-soft);
+  margin: 22px 0 0;
   max-width: 520px;
+  text-wrap: pretty;
 }
 
 .ctaRow {
   display: flex;
-  gap: 14px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.microcopy {
-  font-size: 12.5px;
-  color: #9aa0a6;
-  margin-top: 18px;
-}
-
-.chatCard {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-  padding: 22px;
-  max-width: 460px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.chatHeader {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.avatar {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--color-brand-chip-bg);
-  color: var(--color-brand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 11px;
-  flex-shrink: 0;
-}
-
-.messages {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
-  padding-top: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
-.messageGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  max-width: 80%;
+.cta {
+  font-size: 16px;
+  padding: 15px 24px;
 }
 
-.messageGroupUser {
-  align-self: flex-end;
-  align-items: flex-end;
+.micro {
+  font-size: 14px;
+  color: var(--color-text-faint);
+  margin-top: 14px;
 }
 
-.messageGroupBot {
-  align-self: flex-start;
-  align-items: flex-start;
-}
-
-.messageLabel {
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0 4px;
-}
-
-.bubbleUser,
-.bubbleBot {
-  padding: 10px 14px;
-  border-radius: 14px;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.bubbleUser {
-  background: var(--color-brand-chip-bg);
-  color: var(--color-text);
-}
-
-.bubbleBot {
-  background: var(--color-bg-warm);
-  color: var(--color-text);
+@media (max-width: 640px) {
+  .hero {
+    padding: 40px 0 56px;
+  }
+  .grid {
+    gap: 40px;
+  }
+  .sub {
+    font-size: 17px;
+  }
+  .ctaRow .cta {
+    flex: 1 1 100%;
+  }
 }

@@ -1,19 +1,55 @@
-.cta {
-  background: var(--color-bg-warm);
-  padding: 36px 0;
+.wrap {
+  padding-bottom: 88px;
 }
 
-.inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
+.card {
+  border-radius: 28px;
+  padding: 56px 40px;
+  text-align: center;
+  color: #fff;
+  background: var(--color-brand);
 }
 
-.copy {
-  font-size: clamp(20px, 3vw, 24px);
-  font-weight: 600;
+.title {
   font-family: var(--font-serif);
-  max-width: 440px;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.12;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.light,
+.darkBtn {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px 24px;
+}
+
+.light {
+  background: #fff;
+  color: #000;
+}
+
+.darkBtn {
+  background: var(--color-bg-dark);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    padding-bottom: 56px;
+  }
+  .card {
+    padding: 40px 22px;
+    border-radius: 24px;
+  }
 }

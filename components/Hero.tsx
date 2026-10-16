@@ -1,80 +1,53 @@
-"use client";
-
-import { useState } from "react";
-import { PlayCircle } from "lucide-react";
-import DemoModal from "./DemoModal";
+import AudienceToggle from "./AudienceToggle";
+import ChatDemo from "./ChatDemo";
 import styles from "./Hero.module.css";
-import { SIGN_UP_URL } from "@/lib/urls";
+import type { Audience } from "@/lib/audience";
+import { RECRUITER_CHAT_URL, SIGN_UP_URL } from "@/lib/urls";
 
-const DEMO_VIDEO_ID = "oWNfjlQPNbc";
+const COPY = {
+  candidate: {
+    sub: "Upload your CV once. Chatfolio turns it into an AI portfolio that answers recruiter questions about your skills, projects and availability, 24/7.",
+    cta: "Create my Chatfolio, free",
+    href: SIGN_UP_URL,
+    micro: "Free forever plan · No credit card · Live in 3 minutes",
+  },
+  recruiter: {
+    sub: "Skip the CV pile. Ask any candidate's AI portfolio about their experience, notice period and time zone, then book a call in minutes.",
+    cta: "Find candidates",
+    href: RECRUITER_CHAT_URL,
+    micro: "Always free for recruiters · No account needed to chat",
+  },
+};
 
-export default function Hero() {
-  const [demoOpen, setDemoOpen] = useState(false);
+type HeroProps = {
+  audience: Audience;
+  onAudienceChange: (audience: Audience) => void;
+};
+
+export default function Hero({ audience, onAudienceChange }: HeroProps) {
+  const copy = COPY[audience];
 
   return (
     <section id="top" className={styles.hero}>
       <div className={`container ${styles.grid}`}>
-        <div>
-          <span className="chip">AI-powered portfolios</span>
+        <div className={styles.copy}>
+          <AudienceToggle audience={audience} onChange={onAudienceChange} />
           <h1 className={styles.headline}>
-            Your portfolio, <em>answering</em> recruiters while you sleep
+            Recruiters chat with your CV. <em>You get hired faster.</em>
           </h1>
-          <p className={styles.sub}>
-            Turn your CV into an AI portfolio that answers recruiter questions about your experience, skills, projects, and availability — even when you&apos;re offline.
-          </p>
-          {/* <p className={styles.sub}>
-            Upload your CV. Review your profile. Publish your Chatfolio. Let recruiters start the conversation.
-          </p> */}
+          <p className={styles.sub}>{copy.sub}</p>
           <div className={styles.ctaRow}>
-            <a href={SIGN_UP_URL} className="btn btn-primary">
-              Create my Chatfolio - Free
+            <a href={copy.href} className={`btn btn-primary ${styles.cta}`}>
+              {copy.cta}
             </a>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => setDemoOpen(true)}
-            >
-              <PlayCircle size={18} />
-              See how it works
-            </button>
+            <a href="#product" className={`btn btn-secondary ${styles.cta}`}>
+              Watch how it works
+            </a>
           </div>
-          <p className={styles.microcopy}>Free to start · No credit card required</p>
+          <p className={styles.micro}>{copy.micro}</p>
         </div>
-
-        <div className={styles.chatCard}>
-          <div className={styles.chatHeader}>
-            <div className={styles.avatar}>AL</div>
-            <span>Ada Lovelace&apos;s chatfolio</span>
-          </div>
-          <div className={styles.messages}>
-            <div className={`${styles.messageGroup} ${styles.messageGroupUser}`}>
-              <span className={styles.messageLabel}>Recruiter</span>
-              <div className={styles.bubbleUser}>
-                What&apos;s your experience with distributed systems?
-              </div>
-            </div>
-            <div className={`${styles.messageGroup} ${styles.messageGroupBot}`}>
-              <span className={styles.messageLabel}>Chatfolio</span>
-              <div className={styles.bubbleBot}>
-                I led the platform team at Acme, building a payments ledger handling
-                millions of transactions a day across distributed services.
-              </div>
-            </div>
-            <div className={`${styles.messageGroup} ${styles.messageGroupUser}`}>
-              <span className={styles.messageLabel}>Recruiter</span>
-              <div className={styles.bubbleUser}>Open to remote roles?</div>
-            </div>
-            <div className={`${styles.messageGroup} ${styles.messageGroupBot}`}>
-              <span className={styles.messageLabel}>Chatfolio</span>
-              <div className={styles.bubbleBot}>
-                Yes — remote or hybrid, based in Dhaka or fully remote internationally.
-              </div>
-            </div>
-          </div>
-        </div>
+        <ChatDemo />
       </div>
-
-      <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} videoId={DEMO_VIDEO_ID} />
     </section>
   );
 }

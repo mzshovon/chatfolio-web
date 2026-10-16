@@ -1,36 +1,40 @@
-import { CheckCircle2 } from "lucide-react";
-import styles from "./SplitSection.module.css";
+import styles from "./Audience.module.css";
 import { RECRUITER_CHAT_URL } from "@/lib/urls";
 
 const POINTS = [
-  "Ask what you'd ask in a screening call — get grounded answers",
-  "Available around the clock, no scheduling required",
-  "Every answer traces back to the candidate's real profile",
+  "Search by role, skill, remote/hybrid and time-zone overlap",
+  "Ask what you'd ask on a screening call. Answers cite the CV",
+  "Book a Google Meet in one click. The candidate gets an SMS",
 ];
 
 export default function ForRecruiters() {
   return (
-    <section id="recruiters" className={`${styles.section} ${styles.dark}`}>
-      <div className={`container ${styles.grid}`}>
-        <div className={styles.pointList} style={{ order: 2 }}>
-          {POINTS.map((point) => (
-            <div key={point} className={`${styles.point} ${styles.pointDark}`}>
-              <CheckCircle2 size={18} className={styles.pointIconAccent} />
-              <span>{point}</span>
-            </div>
-          ))}
+    <div id="recruiters" className={`${styles.card} ${styles.dark}`}>
+      <div className="eyebrow eyebrow-dark">For recruiters</div>
+      <h3 className={styles.title}>Hiring in Bangladesh? Screen candidates in 5 minutes.</h3>
+      <ul className={styles.points}>
+        {POINTS.map((p) => (
+          <li key={p}>
+            <span className={styles.tick}>✓</span>
+            {p}
+          </li>
+        ))}
+      </ul>
+      <div className={styles.compare}>
+        <div className={styles.compareBox}>
+          <div className={styles.compareLabel}>The usual way</div>
+          <div className={styles.compareValue}>38 days</div>
+          <div className={styles.compareLabel}>214 CVs read</div>
         </div>
-        <div style={{ order: 1 }}>
-          <span className="chip chip-dark">For recruiters</span>
-          <h2 className={styles.title}>Don&apos;t just read the CV. Talk to it.</h2>
-          <p className={`${styles.desc} ${styles.descDark}`}>
-            Ask a candidate&apos;s Chatfolio about their experience, skills, projects, availability, and background before scheduling the first call.
-          </p>
-          <a href={RECRUITER_CHAT_URL} className="btn btn-accent" style={{ marginTop: 22 }}>
-            Try a live chatfolio
-          </a>
+        <div className={`${styles.compareBox} ${styles.compareWin}`}>
+          <div className={styles.compareLabel}>With Chatfolio</div>
+          <div className={`${styles.compareValue} ${styles.compareAccent}`}>1 search</div>
+          <div className={styles.compareLabel}>Meet booked same day</div>
         </div>
       </div>
-    </section>
+      <a href={RECRUITER_CHAT_URL} className={styles.link}>
+        Find candidates →
+      </a>
+    </div>
   );
 }
