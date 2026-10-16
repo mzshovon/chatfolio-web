@@ -7,7 +7,7 @@ import { PURCHASE_URL, SIGN_UP_URL } from "@/lib/urls";
 type Currency = "BDT" | "USD";
 
 const PRICES: Record<Currency, { free: string; premium: string }> = {
-  BDT: { free: "৳0", premium: "৳499" },
+  BDT: { free: "৳0", premium: "৳500" },
   USD: { free: "$0", premium: "$5" },
 };
 
@@ -53,7 +53,7 @@ export default function Pricing() {
           <div className={styles.planName}>Free</div>
           <div className={styles.priceRow}>
             <span className={styles.price}>{prices.free}</span>
-            <span className={styles.period}>forever</span>
+            <span className={styles.period}>limited time</span>
           </div>
           <div className={styles.planDesc}>Try Chatfolio and get your link out.</div>
           <ul className={styles.features}>
@@ -72,7 +72,7 @@ export default function Pricing() {
           </div>
           <div className={styles.priceRow}>
             <span className={styles.price}>{prices.premium}</span>
-            <span className={styles.period}>/ month</span>
+            <span className={styles.period}>/ 6 months</span>
           </div>
           <div className={styles.planDesc}>For active job seekers who want every lead.</div>
           <ul className={styles.features}>
@@ -80,7 +80,8 @@ export default function Pricing() {
               <li key={f}><span className={styles.tick}>✓</span>{f}</li>
             ))}
           </ul>
-          <a href={PURCHASE_URL} className="btn btn-primary">Go Premium</a>
+          {/* <a href={PURCHASE_URL} className="btn btn-primary">Go Premium</a> */}
+          <a className="btn btn-primary">Onboard soon</a>
         </div>
       </div>
 
