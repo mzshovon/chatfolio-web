@@ -37,7 +37,7 @@ export default function Hero({ audience, onAudienceChange }: HeroProps) {
           </h1>
           <p className={styles.sub}>{copy.sub}</p>
           <div className={styles.ctaRow}>
-            <a href={copy.href} className={`btn btn-primary ${styles.cta}`}>
+            <a href={copy.href} target="_blank" className={`btn btn-primary ${styles.cta}`}>
               {copy.cta}
             </a>
             <a href="#product" className={`btn btn-secondary ${styles.cta}`}>
