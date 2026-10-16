@@ -11,7 +11,7 @@ import ContactSection from "@/components/ContactSection";
 import ContactModal from "@/components/ContactModal";
 import Footer from "@/components/Footer";
 import FeedbackWidget from "@/components/FeedbackWidget";
-import CrowdfundingWidget from "@/components/CrowdfundingWidget";
+// import CrowdfundingWidget from "@/components/CrowdfundingWidget"; // SupportKori widget, disabled for now
 import type { Audience } from "@/lib/audience";
 
 export default function Home() {
@@ -34,7 +34,9 @@ export default function Home() {
       <div style={{ display: "none" }}>
         <FeedbackWidget />
       </div>
+      {/* SupportKori "Buy me a cha!" widget, disabled for now.
       <CrowdfundingWidget />
+      */}
     </div>
   );
 }
