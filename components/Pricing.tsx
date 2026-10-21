@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import styles from "./Pricing.module.css";
-import { PURCHASE_URL, SIGN_UP_URL } from "@/lib/urls";
+import CheckoutModal from "./CheckoutModal";
+import { ACTIVATE_URL, SIGN_UP_URL } from "@/lib/urls";
 
 type Currency = "BDT" | "USD";
 
@@ -30,6 +31,8 @@ const PREMIUM_FEATURES = [
 
 export default function Pricing() {
   const [currency, setCurrency] = useState<Currency>("BDT");
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const closeCheckout = useCallback(() => setCheckoutOpen(false), []);
   const prices = PRICES[currency];
 
   return (
@@ -80,12 +83,19 @@ export default function Pricing() {
               <li key={f}><span className={styles.tick}>✓</span>{f}</li>
             ))}
           </ul>
-          {/* <a href={PURCHASE_URL} className="btn btn-primary">Go Premium</a> */}
-          <a className="btn btn-primary">Onboard soon</a>
+          <button type="button" className="btn btn-primary" onClick={() => setCheckoutOpen(true)}>
+            Go Premium
+          </button>
+          <p className={styles.secure}>Secure checkout by Support Kori · bKash, Nagad, cards</p>
+          {/* <a className="btn btn-primary">Onboard soon</a> */}
         </div>
       </div>
 
-      <p className={styles.note}>Recruiters chat and search for free. Cancel Premium anytime.</p>
+      <p className={styles.note}>Recruiters chat and search for free. Already bought Premium?{" "}
+        <a href={ACTIVATE_URL} className={styles.activate}>Activate your license key →</a>
+      </p>
+
+      <CheckoutModal open={checkoutOpen} onClose={closeCheckout} price={PRICES.BDT.premium} />
     </section>
   );
 }
